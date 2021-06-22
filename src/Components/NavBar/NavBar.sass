@@ -1,0 +1,56 @@
+$nav-color: #eeebeb80
+$title-color: #574f4fbd
+.nav-bar
+    .nav-bar__title-block
+        height: 10vh
+        background-color: $nav-color
+        display: grid
+        grid-template-columns: 1fr 10fr 1fr
+
+        .nav-bar__central-title-container
+
+            .nav-bar__central-title
+                font-size: 1.5em
+                font-weight: 700
+                display: block
+
+            .nav-bar__central-title-adress
+                display: block
+                color: $title-color
+                font-size: 0.9em
+
+        .nav-bar__menu-icon
+            width: 2em
+            margin: 1em
+            cursor: pointer
+        .nav-bar__find-icon
+            width: 2em
+            margin: 1em
+            cursor: pointer
+
+    .nav-bar__items-block
+        height: 14vh
+        background-color: $nav-color
+        overflow: auto
+        white-space: nowrap
+        img
+            width: 3.3em
+        .nav-bar__background_selected
+            position: absolute
+            border: none
+            border-radius: 1em
+            background-color: #fae73ae3
+        .nav-bar__item-block
+            display: inline-block
+            text-align: center
+            text-decoration: none
+            margin: 0.3em
+            padding: 0.2em
+            border: 1px solid #ccc3c3b7
+            border-radius: 15%
+            width: 6em
+            position: relative
+
+            .nav-bar__title-text
+                color: $title-color
+                text-align: center
