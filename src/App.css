@@ -1,5 +1,6 @@
 body {
   background-color: rgba(220, 222, 224, 0.507);
+  user-select: none
 }
 
 .App {

@@ -1,28 +1,38 @@
 import { lazy, Suspense, useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useParams } from "react-router-dom"
 import DishSkeleton from "../../Components/site-skeletons/Dish-skeleton/DishSkeleton"
-import { fetchDishes } from "../../Functions/firebaseFunction"
 import { IDish } from "../../interfaces/IDish"
-// import Dish from "./DishesPageComponents/Dish"
+import { filterArray } from "../../Redux/dishesSlice"
 
 const Dish = lazy(() => import("./DishesPageComponents/Dish"))
 
-const DishesPage: React.FC<{ type: string }> = ({ type }) => {
-    const [dishes, setDishes] = useState<IDish[]>([])
+const DishesPage = () => {
+    // const [dishes, setDishes] = useState<IDish[]>([])
+    enum d {
+        filteredArray = "filteredArray"
 
+    }
+    const dispatch = useDispatch()
+    const params: { type: string } = useParams()
+    const type = params.type
+
+
+    const dishes = useSelector(
+        (state: { dishes: { filteredArray: IDish[], dishesArray: IDish[] } }) => state.dishes[d.filteredArray])
+    console.log(dishes)
     useEffect(() => {
-        fetchDishes().then(result => {
-            if (type == "popular") {
-                return result.filter(elem => elem.popular)
-            }
-            return result.filter((elem) => elem.type == type)
-        }).then((result) => { setDishes(result) })
+        dispatch(filterArray({ type }))
     }, [type])
+
+
+    //     
     return (
         <div>
 
-            {dishes.map(dish => (
-                <Suspense fallback={<DishSkeleton />}>
-                    <Dish dish={dish} />
+            {dishes.map((dish, indx) => (
+                <Suspense fallback={<></>}>
+                    <Dish dish={dish} key={indx} />
                 </Suspense>
 
             ))}

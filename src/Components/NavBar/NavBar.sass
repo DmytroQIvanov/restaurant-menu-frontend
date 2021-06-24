@@ -33,13 +33,22 @@ $title-color: #574f4fbd
         background-color: $nav-color
         overflow: auto
         white-space: nowrap
+        -webkit-box-shadow: inset -22px 0px 48px -19px rgba(0,0,0,0.2)
+        box-shadow: inset -22px 0px 48px -19px rgba(0,0,0,0.2)
+        transition-duration: 0.5s
         img
             width: 3.3em
+            transition-duration: 0.3s
+
         .nav-bar__background_selected
             position: absolute
+            transition-duration: 0.5s
             border: none
             border-radius: 1em
             background-color: #fae73ae3
+            img
+                transform: scale(1.15 )
+                transition-duration: 0.3s
         .nav-bar__item-block
             display: inline-block
             text-align: center

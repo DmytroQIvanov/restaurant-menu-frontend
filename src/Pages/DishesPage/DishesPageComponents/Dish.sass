@@ -3,6 +3,7 @@
     background-color: #ffffff
     margin: 1.5vh
     position: relative
+    transition-duration: 0.5s
 
     .dish__image-container
         position: relative
@@ -38,7 +39,7 @@
         cursor: pointer
         background-color: #e7e1e1e5
         border-radius: 100%
-        padding: 0.5em
+        padding: 0.8em
     .dish__info-container
         position: relative
         height: 3em
@@ -66,3 +67,15 @@
             width: 70vw
             text-align: left
             overflow: hidden
+        .dish__plus
+            border: 1px solid black
+            font-size: 4em
+            font-weight: 1000
+            position: absolute
+            z-index: 10
+            right: 1em
+            background-color: green
+            border-radius: 100%
+            padding: 1em
+.dish-load
+    opacity: 0%

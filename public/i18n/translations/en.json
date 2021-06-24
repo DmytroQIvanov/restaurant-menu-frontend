@@ -1,0 +1,20 @@
+{
+    "nav-panel.popular":"Popular",
+    "nav-panel.favourite":"Favourites",
+    "nav-panel.bread":"Bread",
+    "nav-panel.breakfast":"Breakfast",
+    "nav-panel.bakery":"Bakery",
+    "nav-panel.adress":"Velyka Vasylkivska St, 67/7",
+
+    
+    "menu.yourTable":"Your table:",
+    "menu.yourProfile":"Profile",
+    "menu.about":"About us",
+
+    "dish.cookingTime":"MIN.",
+
+    "about.title":"About application",
+    "about.text1":"We all come to work every day to enable you with a full and rewarding coffeehouse experience.",
+    "about.text2":""
+
+}
