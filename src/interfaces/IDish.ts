@@ -6,6 +6,5 @@ export interface IDish {
     id: Number,
     image: string,
     type: string,
-    popular: boolean
-
+    popular: boolean    
 }

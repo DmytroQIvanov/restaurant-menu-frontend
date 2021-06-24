@@ -8,25 +8,21 @@ import { filterArray } from "../../Redux/dishesSlice"
 const Dish = lazy(() => import("./DishesPageComponents/Dish"))
 
 const DishesPage = () => {
-    // const [dishes, setDishes] = useState<IDish[]>([])
-    enum d {
-        filteredArray = "filteredArray"
 
-    }
     const dispatch = useDispatch()
     const params: { type: string } = useParams()
     const type = params.type
 
 
     const dishes = useSelector(
-        (state: { dishes: { filteredArray: IDish[], dishesArray: IDish[] } }) => state.dishes[d.filteredArray])
+        (state: { dishes: { filteredArray: IDish[], dishesArray: IDish[] } }) => state.dishes.filteredArray)
     console.log(dishes)
     useEffect(() => {
         dispatch(filterArray({ type }))
     }, [type])
 
 
-    //     
+
     return (
         <div>
 

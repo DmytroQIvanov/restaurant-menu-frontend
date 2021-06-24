@@ -1,8 +1,6 @@
 
-
 import { Router, Route, Redirect } from "react-router-dom";
 import { createBrowserHistory } from 'history';
-import Settings from "../Pages/Menu/Menu";
 import DishesPage from "../Pages/DishesPage/DishesPage";
 import DishPage from "../Pages/DishPage/DishPage";
 import brandIcon from '../assets/ico-brand.f5c1b5c3.svg'
@@ -11,17 +9,19 @@ import { IDish } from "../interfaces/IDish";
 import { lazy, Suspense, useEffect } from "react";
 import { fetchDishes } from "../Functions/firebaseFunction";
 import { filterArray, getDishes } from "../Redux/dishesSlice";
-import About from "../Pages/About/About";
-import Profile from "../Pages/Profile/Profile";
 
 
 
 
 import './Rout.sass'
 
+
 //Lazy loading
 
 const NavBar = lazy(() => import("./NavBar/NavBar"))
+const Settings = lazy(() => import("../Pages/Menu/Menu"))
+const About = lazy(() => import("../Pages/About/About"))
+const Profile = lazy(() => import("../Pages/Profile/Profile"))
 
 
 const history = createBrowserHistory();
@@ -40,10 +40,8 @@ export const Rout = () => {
     return (<>
         <Router history={history}>
 
-            {/* <Switch> */}
 
 
-            {/* lazy */}
             <Route path="/menu">
                 <Suspense fallback={null}>
                     <Settings />
@@ -70,6 +68,7 @@ export const Rout = () => {
             <Route path="/profile">
                 <Profile />
             </Route>
+
             <img src={brandIcon} className="rout__brand-icon" />
             <Redirect to="/dishes/popular" />
 

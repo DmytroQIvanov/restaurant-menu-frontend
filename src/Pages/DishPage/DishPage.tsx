@@ -10,13 +10,10 @@ const DishPage = () => {
     useEffect(() => {
         fetchDish(params.id).then(elem => setDish(elem))
     }, [])
-    if (dish) {
-        return (
-            <Dish dish={dish} />
-        )
-    } else {
-        return <></>
-    }
+    if (dish) return <Dish dish={dish} />
+
+    return <></>
+
 }
 
 export default DishPage

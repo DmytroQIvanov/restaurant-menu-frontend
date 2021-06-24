@@ -59,9 +59,6 @@ const Profile = () => {
     const profileData = JSON.parse(localData)
 
 
-
-
-
     return (
         <div className="profile-registered">
             <Link to="/menu"><img src={cross} className="profile-registered__cross" /></Link>
@@ -69,8 +66,15 @@ const Profile = () => {
                 Ваш профиль:
             </div>
             <div className="profile-registered__data-container">
-                <div className="profile-registered__data"><a className="profile-registered__data-title">Имя:</a> {profileData?.name}</div>
-                <div className="profile-registered__data"><a className="profile-registered__data-title">Телефон:</a> {profileData?.number}</div>
+                <div className="profile-registered__data">
+                    <a className="profile-registered__data-title">Имя:</a>
+                    {profileData?.name}
+                </div>
+                <div className="profile-registered__data">
+                    <a className="profile-registered__data-title">
+                        Телефон:
+                    </a> {profileData?.number}
+                </div>
             </div>
             <button
                 className="profile-registered__button_delete-profile"

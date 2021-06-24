@@ -17,7 +17,6 @@ export const filterItems = (array: IDish[], query?: string): IDish[] => {
 
 
 const FindBlock: React.FC<{ setFindBlock: Function }> = ({ setFindBlock }) => {
-    const dishes = useSelector((state: { dishes: IDish[] }) => state.dishes)
     const dispatch = useDispatch()
 
     const [findInput, setFindInput] = useState('')
