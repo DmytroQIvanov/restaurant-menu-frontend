@@ -1,9 +1,9 @@
 Tech stack:
-TypeScript, React, Redux, i18n, react-router, sass
+`TypeScript`, `React`, `Redux`, `i18n`, `react-router`, `sass`
 
 
-Database: ### `Firestore`
-Hosting: ### `Firebase`
+Database: `Firestore`
+Hosting: `Firebase`
 
 For start:
 ### `npm i`
